@@ -1,0 +1,7 @@
+bazel-bin
+bazel-contentful-fetcher
+bazel-genfiles
+bazel-out
+bazel-testlogs
+
+.content/
