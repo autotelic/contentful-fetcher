@@ -13,8 +13,10 @@ import (
 
 // Query is a query to be performed to Path and saved to Target.
 type Query struct {
-	Target string `json:"target"`
-	Path   string `json:"path"`
+	Name   string            `json:"name"`
+	Target string            `json:"target"`
+	Path   string            `json:"path"`
+	Params map[string]string `json:"params"`
 }
 
 // QueryExecutor is the interface that wraps the Execute method for executing a query.
@@ -54,9 +56,16 @@ func (qe *queryExecutor) Execute(q *Query, apiURL string, accessToken string) er
 	}
 
 	u.Path = q.Path
-	qv := url.Values{}
-	qv.Set("access_token", accessToken)
-	u.RawQuery = qv.Encode()
+
+	params := url.Values{}
+	for k, v := range q.Params {
+		params.Set(k, v)
+	}
+
+	params.Set("access_token", accessToken)
+
+	u.RawQuery = params.Encode()
+
 	res, err := http.Get(u.String())
 	if err != nil {
 		return err

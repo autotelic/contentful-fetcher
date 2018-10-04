@@ -47,6 +47,8 @@ func NewRootCommand(
 			}
 			apiURL := viper.Get("api_url").(string)
 
+			// TODO(f0rmiga): Validate manifests before processing them.
+
 			for _, manifestPath := range manifestPaths {
 				f, err := fileOpener.Open(manifestPath)
 				if err != nil {

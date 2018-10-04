@@ -39,3 +39,5 @@ CONTENTFUL_ACCESS_TOKEN=fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e7886
 
 *Note*: `$(bazel build //cli 2>&1 >&- | grep 'bazel-bin/cli/')` will compile and call the compiled
 binary in the above command.
+
+The examples manifest will create a `.content` directory with the contents of the queries.
