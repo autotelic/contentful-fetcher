@@ -1,0 +1,17 @@
+{
+  "queries": [
+    {
+      "name": "Playsam product",
+      "target": ".content/products/playsam.json",
+      "path": "/spaces/yadj1kx9rmg0/environments/staging/entries/5KsDBWseXY6QegucYAoacS"
+    },
+    {
+      "name": "All Products",
+      "target": ".content/products.json",
+      "path": "/spaces/yadj1kx9rmg0/environments/staging/entries",
+      "params": {
+        "content_type": "2PqfXUJwE8qSYKuM0U6w8M"
+      }
+    }
+  ]
+}
