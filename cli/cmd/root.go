@@ -10,7 +10,7 @@ import (
 	"github.com/autotelic/contentful-fetcher/lib/filesystem"
 )
 
-// NewDefaultRootCommand wires the default dependencies for the NewRootCommand.
+// NewDefaultRootCommand wires together the default dependencies for the NewRootCommand.
 func NewDefaultRootCommand(name string) *cobra.Command {
 	return NewRootCommand(
 		name,
