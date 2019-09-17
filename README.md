@@ -10,13 +10,11 @@ This is a command line tool for interacting with the Contentful public API.
 
 ### The CLI
 
-Run:
+Run the installer:
 
 ```sh
-bazel build //cli
+bazel run //:install_cli
 ```
-
-It will print the path to the binary under `bazel-bin/`.
 
 ## Usage
 
@@ -35,10 +33,7 @@ Contentful):
 ```sh
 CONTENTFUL_ACCESS_TOKEN=fdb4e7a3102747a02ea69ebac5e282b9e44d28fb340f778a4f5e788625a61abe \
   CONTENTFUL_API_URL="https://cdn.contentful.com/" \
-  $(bazel build //cli 2>&1 >&- | grep 'bazel-bin/cli/') -m examples/manifest.json
+  contentul-fetcher-cli -m examples/manifest.json
 ```
-
-*Note*: `$(bazel build //cli 2>&1 >&- | grep 'bazel-bin/cli/')` will compile and call the compiled
-binary in the above command.
 
 The examples manifest will create a `.content` directory with the contents of the queries.
