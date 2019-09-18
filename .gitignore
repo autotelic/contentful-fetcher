@@ -5,3 +5,9 @@ bazel-out
 bazel-testlogs
 
 .content/
+releases/*.zip
+
+.DS_Store
+
+.envrc
+
